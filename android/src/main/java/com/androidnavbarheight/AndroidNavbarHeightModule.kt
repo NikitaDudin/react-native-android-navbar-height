@@ -18,7 +18,7 @@ class AndroidNavbarHeightModule internal constructor(context: ReactApplicationCo
     return NAME
   }
 
-  override fun getNBHeight(): Double {
+  fun getNBHeight(): Double {
     val context: Context = getReactApplicationContext()
     val windowManager: WindowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
     val display: Display = windowManager.getDefaultDisplay()
