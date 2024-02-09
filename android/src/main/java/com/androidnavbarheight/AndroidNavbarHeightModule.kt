@@ -33,19 +33,17 @@ class AndroidNavbarHeightModule internal constructor(context: ReactApplicationCo
 
       return PixelUtil.toDIPFromPixel(height.toFloat()).toDouble()  
     } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-        val metrics = DisplayMetrics()
-        display.getMetrics(metrics)
-        val usableHeight = metrics.heightPixels
-        display.getRealMetrics(metrics)
-        val realHeight = metrics.heightPixels
+      val metrics = DisplayMetrics()
+      display.getMetrics(metrics)
+      val usableHeight = metrics.heightPixels
+      display.getRealMetrics(metrics)
+      val realHeight = metrics.heightPixels
         
-        if (realHeight > usableHeight) {
-          val diff = (realHeight - usableHeight).toFloat()
+      if (realHeight > usableHeight) {
+        val diff = (realHeight - usableHeight).toFloat()
 
-          return PixelUtil.toDIPFromPixel(diff).toDouble()
-        } else {
-          return 0.0
-        }
+        return PixelUtil.toDIPFromPixel(diff).toDouble()
+      } 
     }
 
     return 0.0
