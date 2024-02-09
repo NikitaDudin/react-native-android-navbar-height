@@ -7,5 +7,6 @@ import com.facebook.react.bridge.Promise
 abstract class AndroidNavbarHeightSpec internal constructor(context: ReactApplicationContext) :
   ReactContextBaseJavaModule(context) {
 
-  abstract fun multiply(a: Double, b: Double, promise: Promise)
+  abstract fun getNavigationBarHeightAsync(promise: Promise)
+  abstract fun getNavigationBarHeight(): Double
 }

@@ -3,16 +3,15 @@
 @implementation AndroidNavbarHeight
 RCT_EXPORT_MODULE()
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_EXPORT_METHOD(multiply:(double)a
-                  b:(double)b
-                  resolve:(RCTPromiseResolveBlock)resolve
+RCT_EXPORT_METHOD(getNavigationBarHeightAsync: (RCTPromiseResolveBlock)resolve
                   reject:(RCTPromiseRejectBlock)reject)
 {
-    NSNumber *result = @(a * b);
+    resolve([NSNumber numberWithDouble:0.0]);
+}
 
-    resolve(result);
+RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(getNavigationBarHeight)
+{
+    return [NSNumber numberWithDouble:0.0];
 }
 
 // Don't compile this code when we build for the old architecture.

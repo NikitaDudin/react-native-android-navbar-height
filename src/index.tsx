@@ -24,6 +24,10 @@ const AndroidNavbarHeight = AndroidNavbarHeightModule
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return AndroidNavbarHeight.multiply(a, b);
+export function getNavigationBarHeightAsync(): Promise<number> {
+  return AndroidNavbarHeight.getNavigationBarHeightAsync();
+}
+
+export function getNavigationBarHeight(): number {
+  return AndroidNavbarHeight.getNavigationBarHeight();
 }
