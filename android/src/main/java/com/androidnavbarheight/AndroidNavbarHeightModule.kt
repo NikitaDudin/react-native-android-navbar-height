@@ -18,8 +18,7 @@ class AndroidNavbarHeightModule internal constructor(context: ReactApplicationCo
     return NAME
   }
 
-  @ReactMethod(isBlockingSynchronousMethod = true)
-  override fun getNavigationBarHeight(): Double {
+  override fun getNBHeight(): Double {
     val context: Context = getReactApplicationContext()
     val windowManager: WindowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
     val display: Display = windowManager.getDefaultDisplay()
@@ -49,9 +48,14 @@ class AndroidNavbarHeightModule internal constructor(context: ReactApplicationCo
     return 0.0
   }
 
+  @ReactMethod(isBlockingSynchronousMethod = true)
+  override fun getNavigationBarHeight(): Double {
+    return getNBHeight()
+  }
+
   @ReactMethod
   override fun getNavigationBarHeightAsync(promise: Promise) {
-    promise.resolve(getNavigationBarHeight())
+    promise.resolve(getNBHeight())
   }
 
   companion object {
